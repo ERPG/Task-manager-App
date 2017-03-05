@@ -1,0 +1,5 @@
+<ul ng-controller="DoneTasksCtrl">
+    <li ng-repeat="task in tasks | filter: { done: isSectionDone }">
+        <span>{{ task.title }}</span><span>{{ task.createdAt }}</span>
+    </li>
+</ul>
