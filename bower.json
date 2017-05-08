@@ -1,9 +1,9 @@
 {
   "name": "express-projects",
   "description": "",
-  "main": "index.js",
+  "main": "app.js",
   "authors": [
-    "JuanMa Garrido <JuanMa.Garrido@gmail.com>"
+    "Ernesto Parra <ernesto-parra@hotmail.com>"
   ],
   "license": "MIT",
   "homepage": "https://github.com/SkylabCoders/express-projects",

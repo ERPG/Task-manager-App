@@ -11,8 +11,8 @@ var getById = require('./router/getById')
 var deleteTask = require('./router/delete')
 var updateTask = require('./router/update')
 
-var urlDb = 'mongodb://localhost:27017/test'
 
+var urlDb = 'mongodb://localhost:27017/test'
 
 app.use(bodyParser.urlencoded({ extended: false }))
  
@@ -38,5 +38,3 @@ MongoClient.connect(urlDb)
 
 app.listen(PORT, () => console.log(`listening on PORT ${PORT}`))
 
-//algunos metodos no devuelven cursor tal como son remove, insert o alguno otro..
-//por o tanto no podemos aplicarle metodos de cursor como toArray..

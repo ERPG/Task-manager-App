@@ -2,7 +2,7 @@
   "name": "express-projects",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "prestart": "npm install",
     "dev": "nodemon server",

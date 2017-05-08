@@ -1,4 +1,4 @@
-module.exports = (db, req, es) => {
+module.exports = (db, req, res) => {
 
 	const { id } = req.params
 

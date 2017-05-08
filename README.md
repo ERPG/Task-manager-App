@@ -1,80 +1,76 @@
-# TO-DO App using an API
+[![MongoDB](https://github.com/FransLopez/logo-images/blob/master/logos/mongodb.png)](https://www.mongodb.com/)
+[![NodeJS](https://github.com/FransLopez/logo-images/blob/master/logos/nodejs.png)](https://nodejs.org/)
+[![AngularJS](https://github.com/FransLopez/logo-images/blob/master/logos/angularjs.png)](https://angularjs.org/)  
+[![Standard - JavaScript Style Guide](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/)
 
-Create a server that "serves" a client (under the `public` folder) that: 
+# TO-DO App using an API, MongoDB and Angular
 
-- interacts with this server by using the different endopoints
-- manage the creation, update, removal of tasks
-- show different list tasks (done & pending tasks)
-
-Feel free to use your own design and client app routes 
+[Demo](https://frans-todotasks.herokuapp.com/)
 
 ## Start server
 
 To start the server you can just do
 
 ```
-npm start
+npm start && bower install
 ```
 
 This will server static files under `public` folder and will listen to several endopoint to allow clients interact w/ the data
-
-You can see the current status of your data all the time at `data/db.json`
 
 ## Actions available
 
 All these endpoints will start locally w/ `http://localhost:3000` 
 
-Example: `http://localhost:3000/api/Todos`
+Example: `http://localhost:3000/tasks`
 
 ### GET endpoints
 
 ```
-curl http://localhost:3000/api/Todos
+curl http://localhost:3000/tasks
 ```
 
-#### [GET] `api/Todos`
+#### [GET] `tasks`
 
 Get List ALL tasks
 
-#### [GET] `api/Todos/:id` 
+#### [GET] `task/:id` 
 
 Get specific taks per id
 
-#### [GET] `api/Todos?done=true` 
+#### [GET] `tasks/status/completed` 
 
 Get done tasks
 
-#### [GET] `api/Todos?done=false` 
+#### [GET] `tasks/status/pending` 
 
 Get pending tasks
 
 ### POST endpoints
 
 ```
-curl --data "todo=buy cars" http://localhost:3000/api/Todos
+curl --data "title=buy cars" http://localhost:3000/tasks
 ```
 
-#### [POST] `api/Todos` (http://localhost:3000/api/Todos)
+#### [POST] `tasks` (http://localhost:3000/tasks)
 
-To add a task. It only need a `todo` value. The rest of the values (`done`, `createdAt`, `id`) will be added automatically
+To add a task. It only need a `title` value. The rest of the values (`done`, `createdAt`, `id`) will be added automatically
 
 ### PUT endpoints
 
 ```
-curl -X "PUT" --data "done=true&todo=buy Books&createdAt=1487840371425" http://localhost:3000/api/Todos/4
+curl -X "PUT" --data "done=true" http://localhost:3000/task/2394723sdfasdsa
 ```
 
-#### [PUT] `api/Todos/:id` 
+#### [PUT] `task/:id` 
 
-To update a task. It needs to receive the following values: `done`, `todo`, `createdAt` (even if not all are being updated). The rest value `modifiedAt` will be added automatically
+To update a task. It needs to receive one or more of the following values: `done`, `title` (even if not all are being updated). The rest value `completedAt`, `createdAt` will be added automatically
 
 ### DELETE endpoints
 
 ```
-curl -X "DELETE" http://localhost:3000/api/Todos/4
+curl -X "DELETE" http://localhost:3000/task/asf830q34ks3
 ```
 
-#### [DELETE] `api/Todos/:id` 
+#### [DELETE] `task/:id` 
 
 To remove a task. Only by passing an id the task will be removed.
-
